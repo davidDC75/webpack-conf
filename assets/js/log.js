@@ -1,5 +1,7 @@
-var log = function (value) {
+export function log(value) {
     console.log(value);
 }
-
-export default log;
+export function log2(value) {
+    console.log(value);
+    console.log(value);
+}
