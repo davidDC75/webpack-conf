@@ -90,6 +90,10 @@
     "wildcard": "^2.0.0"
   },
   "scripts": {
+    "dev": "webpack --config webpack-dev.config.js",
+    "prod": "webpack --config webpack-prod.config.js",
+    "watch-js-prod": "webpack --config webpack-prod-watch.config.js",
+    "watch-js-dev": "webpack --config webpack-dev-watch.config.js",
     "watch-js": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
