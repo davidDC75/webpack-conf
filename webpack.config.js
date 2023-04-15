@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const dev = "dev";
 /* Pour générer une seule configuration */
 
 module.exports = {
@@ -20,6 +21,8 @@ module.exports = {
     plugins: [new MiniCssExtractPlugin({
         filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     })],
+    // Permet d'avoir les fichiers originals avec source-map
+    devtool: dev ? "eval-source-map" : false,
     module: {
         rules: [
             {
@@ -45,6 +48,18 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [ MiniCssExtractPlugin.loader, 'css-loader'],
+
+                /* Pour ajoute une source map mais c'est plutôt devtool qu'il faut utiliser par defaut */
+                /* https://github.com/webpack-contrib/css-loader#sourcemap */
+                // use: [
+                //     MiniCssExtractPlugin.loader,
+                //     {
+                //       loader: "css-loader",
+                //       options: {
+                //         sourceMap: true,
+                //       },
+                //     },
+                // ],
             },
             // Pour compiler et injecter du sass
             {
