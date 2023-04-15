@@ -1,1 +1,1 @@
-(()=>{"use strict";var o;o="ça fonctionne super bien !",console.log(o),console.log(o)})();
+(()=>{"use strict";let[o,,l]=[1,2,4,5];var e;e=o,console.log(e),console.log(e)})();

@@ -2,7 +2,7 @@ const path = require('path');
 /* Pour générer une seule configuration */
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './assets/js/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),

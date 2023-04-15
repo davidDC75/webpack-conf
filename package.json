@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@babel/preset-env": "^7.21.4",
     "acorn": "^8.8.2",
     "acorn-import-assertions": "^1.8.0",
     "ajv": "^6.12.6",

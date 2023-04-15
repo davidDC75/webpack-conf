@@ -8,6 +8,25 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'production.js',
     },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: [
+                    'babel-loader',
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                ['@babel/preset-env', { targets: "defaults" }]
+                            ]
+                        },
+                    },
+                ],
+            },
+        ],
+    },
 };
 
 /* Pour générer multiple configuration */
