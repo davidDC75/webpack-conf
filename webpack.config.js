@@ -17,7 +17,7 @@ module.exports = {
         aggregateTimeout: 4000,
     },
     // Pour extraire les css en fichier .css
-    // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
+    // https://webpack.js.org/plugins/mini-css-extract-plugin#filename
     plugins: [new MiniCssExtractPlugin({
         filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     })],
