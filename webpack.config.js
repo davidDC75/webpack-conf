@@ -17,23 +17,20 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                // use: ['babel-loader']
                 use: { // Ajout de babel-loader
-                    //'babel-loader',
-                    //{
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                // ['@babel/preset-env', { targets: "> 0.25%, not dead" }]
-                                ['@babel/preset-env', {
-                                    targets: {
-                                        // On choisit la compatibilité avec certains navigateurs
-                                        "browsers": ["last 2 versions","safari >=7", "ie >=7"]
-                                    }
-                                }]
-                            ]
-                        },
-                    //},
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            // ['@babel/preset-env', { targets: "> 0.25%, not dead" }]
+                            ['@babel/preset-env', {
+                                targets: {
+                                    // On choisit la compatibilité avec certains navigateurs
+                                    "browsers": ["last 2 versions","safari >=7", "ie >=7"]
+                                }
+                            }]
+                        ]
+                    },
+
                 },
             }
         ]
