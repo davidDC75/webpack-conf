@@ -33,10 +33,15 @@ let config = {
                     },
                 ],
             },
-            // Pour les imports de css
+            // Pour compiler et injecter du css
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
+            },
+            // Pour compiler et injecter du sass
+            {
+                test: /\.scss$/i,
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
         ],
     },
