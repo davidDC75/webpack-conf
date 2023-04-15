@@ -1,0 +1,17 @@
+$background: #00FFFF;
+$color: #000000;
+$weight: bold;
+
+h2 {
+    background-color: $background;
+    color: $color;
+    transform: translateX(20px);
+}
+
+button {
+    border: 2px solid $color;
+    font-size: 2em;
+    font-weight: $weight;
+    background-color: white;
+    color: black;
+}

@@ -17,7 +17,7 @@ import * as css from '../css/app.css';
 
 // Import un fichier scss
 // Dans le webpack.config.js on utilise le sass-loader
-import * as scss from '../css/h2.scss';
+import * as scss from '../css/app.scss';
 
 
 //import * as bootstrap from 'bootstrap';
