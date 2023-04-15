@@ -17,6 +17,7 @@ module.exports = {
     entry: './assets/js/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        // filename: '[fullhash]-production.js', // Le nom du fichier de sortie avec un hash
         filename: 'production.js',
     },
     // Mode watch activé
