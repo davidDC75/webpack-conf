@@ -12,7 +12,7 @@ import config from './config.json';
 import compress from './config.js';
 
 // Importe le module dans node_modules/ jquery
-import $ from 'jquery';
+import $ from 'jquery'; /* on commente pour le lazy-loading */
 
 /* Pour en importer plusieurs */
 //import {log,log2} from './log.js';
@@ -30,7 +30,15 @@ console.log(config);
 console.log(compress);
 
 // En environnement de dev on peut mettre des break-points avec la commande : debugger
-// debugger
+//debugger
 
 // On utilise jquery
-$('body').css('backgroundColor','#9F9F9F');
+document.getElementById('button').addEventListener('click', function() {
+    // jQuery ici
+    //import(/* webpackChunkName: "jquery" */ 'jquery').then( (jquery) => {
+        //debbuger
+        $('body').css('backgroundColor','#9F9F9F');
+    //});
+
+})
+
