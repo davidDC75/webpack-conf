@@ -21,6 +21,7 @@ module.exports = [
         },
         // name: 'amd',
         entry: './assets/js/app.js',
+        watch: true,
         mode: 'production',
     },
     {
@@ -31,6 +32,7 @@ module.exports = [
         },
         // name: 'commonjs',
         entry: './assets/js/app.js',
+        watch: true,
         mode: 'development',
     },
 ]
