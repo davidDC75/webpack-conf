@@ -27,7 +27,7 @@ module.exports = {
     // Pour extraire les css en fichier .css
     // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [new MiniCssExtractPlugin({
-        filename: 'styles.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        filename: 'home.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     })],
     // Utilisation de TersetPlugin() pour la minimification
     optimization: {
