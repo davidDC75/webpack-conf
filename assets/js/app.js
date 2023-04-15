@@ -8,6 +8,12 @@ import { log2 } from './log.js';
 // Grâce au json loader inclu par défaut, on peut importer des json
 import config from './config.json';
 
+// Importe un fichier de config javascript
+import compress from './config.js';
+
+// Importe le module dans node_modules/ jquery
+import $ from 'jquery';
+
 /* Pour en importer plusieurs */
 //import {log,log2} from './log.js';
 
@@ -19,3 +25,9 @@ log2(b);
 
 // Affiche la configuration loader à partir d'un json
 console.log(config);
+
+// Affiche compress loader à partir d'un fichier de config javascript
+console.log(compress);
+
+// On utilise jquery
+$('body').css('backgroundColor','#9F9F9F');
