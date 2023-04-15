@@ -1,4 +1,6 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 /* Pour générer une seule configuration */
 
 module.exports = {
@@ -8,10 +10,16 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
         filename: 'development.js', // Le nom du fichier de sortie
     },
+    // Pour activer le watch
     watch: true,
     watchOptions: {
         aggregateTimeout: 4000,
     },
+    // Pour extraire les css en fichier .css
+    // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
+    plugins: [new MiniCssExtractPlugin({
+        filename: 'styles.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+    })],
     module: {
         rules: [
             {
@@ -36,12 +44,12 @@ module.exports = {
             // Pour compiler et injecter du css
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: [ MiniCssExtractPlugin.loader, 'css-loader'],
             },
             // Pour compiler et injecter du sass
             {
                 test: /\.scss$/i,
-                use: ['style-loader','css-loader', 'postcss-loader', 'sass-loader'],
+                use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
             },
         ],
     },

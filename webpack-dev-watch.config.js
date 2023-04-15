@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const dev = process.env.NODE_ENV === "dev";
 
@@ -14,6 +15,11 @@ let config = {
     watchOptions: {
         aggregateTimeout: 4000,
     },
+    // Pour extraire les css en fichier .css
+   // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
+    plugins: [new MiniCssExtractPlugin({
+        filename: 'styles.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+    })],
     // Permet d'avoir les fichiers originals avec source-map
     devtool: dev ? "eval-source-map" : false,
     module: {
@@ -36,12 +42,12 @@ let config = {
             // Pour compiler et injecter du css
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             },
             // Pour compiler et injecter du sass
             {
                 test: /\.scss$/i,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+                use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
             },
         ],
     },
