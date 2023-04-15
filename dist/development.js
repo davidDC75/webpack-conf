@@ -6,7 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-/******/ (function() { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
@@ -14,9 +14,9 @@
 /*!**************************!*\
   !*** ./assets/js/app.js ***!
   \**************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _log_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./log.js */ \"./assets/js/log.js\");\n/* Pour importer toutes les fonctions */\n//import * as obj from './log.js';\n\n/* Pour importer une fonction */\n\n\n/* Pour en importer plusieurs */\n//import {log,log2} from './log.js';\n\nlet a = \"Ça fonctionne super bien\";\nlet [b,, c] = [1, 2, 4, 5];\n//console.log(obj);\n(0,_log_js__WEBPACK_IMPORTED_MODULE_0__.log2)(b);\n\n//# sourceURL=webpack://webpack1/./assets/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _log_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./log.js */ \"./assets/js/log.js\");\n/* Pour importer toutes les fonctions */\n//import * as obj from './log.js';\n//console.log(obj);\n\n/* Pour importer une fonction */\n\n\n/* Pour en importer plusieurs */\n//import {log,log2} from './log.js';\n\nvar a = \"Ça fonctionne super bien\";\nvar _ref = [1, 2, 4, 5],\n  b = _ref[0],\n  c = _ref[2];\n(0,_log_js__WEBPACK_IMPORTED_MODULE_0__.log2)(b);\n\n//# sourceURL=webpack://webpack1/./assets/js/app.js?");
 
 /***/ }),
 
@@ -24,9 +24,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _log
 /*!**************************!*\
   !*** ./assets/js/log.js ***!
   \**************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"log\": function() { return /* binding */ log; },\n/* harmony export */   \"log2\": function() { return /* binding */ log2; }\n/* harmony export */ });\nfunction log(value) {\n  console.log(value);\n}\nfunction log2(value) {\n  console.log(value);\n  console.log(value);\n}\n\n//# sourceURL=webpack://webpack1/./assets/js/log.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"log\": () => (/* binding */ log),\n/* harmony export */   \"log2\": () => (/* binding */ log2)\n/* harmony export */ });\nfunction log(value) {\n  console.log(value);\n}\nfunction log2(value) {\n  console.log(value);\n  console.log(value);\n}\n\n//# sourceURL=webpack://webpack1/./assets/js/log.js?");
 
 /***/ })
 
@@ -58,32 +58,32 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 		__webpack_require__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
+/******/ 		__webpack_require__.r = (exports) => {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 /******/ 	
