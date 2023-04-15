@@ -13,6 +13,8 @@ let config = {
     watchOptions: {
         aggregateTimeout: 4000,
     },
+    // Permet d'avoir les fichiers originals avec source-map
+    devtool: dev ? "eval-source-map" : false,
     module: {
         rules: [
             {

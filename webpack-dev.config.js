@@ -8,6 +8,8 @@ let config = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'development.js',
     },
+    // Permet d'avoir les fichiers originals avec source-map
+    devtool: dev ? "eval-source-map" : false,
     module: {
         rules: [
             {
