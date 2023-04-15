@@ -17,7 +17,18 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: ['babel-loader']
+                // use: ['babel-loader']
+                use: [ // Ajout de babel-loader
+                    'babel-loader',
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                ['@babel/preset-env', { targets: "defaults" }]
+                            ]
+                        },
+                    },
+                ],
             }
         ]
     }

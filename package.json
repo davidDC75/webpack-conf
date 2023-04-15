@@ -15,6 +15,7 @@
     "clone-deep": "^4.0.1",
     "colorette": "^2.0.19",
     "commander": "^2.20.3",
+    "corejs": "^1.0.0",
     "cross-spawn": "^7.0.3",
     "electron-to-chromium": "^1.4.365",
     "enhanced-resolve": "^5.12.0",
