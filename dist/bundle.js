@@ -1,1 +1,1 @@
-(()=>{"use strict";var o={666:(o,e)=>{Object.defineProperty(e,"__esModule",{value:!0}),e.log=function(o){console.log(o)},e.log2=function(o){console.log(o),console.log(o)}}},e={};(0,function n(r){var t=e[r];if(void 0!==t)return t.exports;var l=e[r]={exports:{}};return o[r](l,l.exports,n),l.exports}(666).log2)("ça fonctionne super bien !")})();
+(()=>{"use strict";let[o,,l]=[1,2,4,5];var e;e=o,console.log(e),console.log(e)})();

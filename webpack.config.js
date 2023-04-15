@@ -2,11 +2,15 @@ const path = require('path');
 /* Pour générer une seule configuration */
 
 module.exports = {
-    mode: 'production', // Choisir le mode : development ou production
+    mode: 'development', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
     output: {
         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
-        filename: 'bundle.js', // Le nom du fichier de sortie
+        filename: 'development.js', // Le nom du fichier de sortie
+    },
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 4000,
     },
     module: {
         rules: [
