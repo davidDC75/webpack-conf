@@ -111,6 +111,8 @@
     "babel-loader": "^9.1.2",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^6.7.3",
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2"
   }
 }
