@@ -1,7 +1,7 @@
 const path = require('path');
-/* Pour générer une seule configuration */
+const dev = process.env.NODE_ENV === "dev";
 
-module.exports = {
+let config = {
     mode: 'development',
     entry: './assets/js/app.js',
     output: {
@@ -28,6 +28,38 @@ module.exports = {
         ],
     },
 };
+
+module.exports = config;
+
+/* Pour générer une seule configuration */
+
+// module.exports = {
+//     mode: 'development',
+//     entry: './assets/js/app.js',
+//     output: {
+//         path: path.resolve(__dirname, 'dist'),
+//         filename: 'development.js',
+//     },
+//     module: {
+//         rules: [
+//             {
+//                 test: /\.js$/, // On ne traite que les js
+//                 exclude: /(node_modules|bower_components)/, // On exclu ces deux répertoires
+//                 use: [ // Ajout de babel-loader
+//                     'babel-loader',
+//                     {
+//                         loader: 'babel-loader',
+//                         options: {
+//                             presets: [
+//                                 ['@babel/preset-env', { targets: "defaults" }]
+//                             ]
+//                         },
+//                     },
+//                 ],
+//             },
+//         ],
+//     },
+// };
 
 /* Pour générer multiple configuration */
 
