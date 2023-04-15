@@ -1,6 +1,15 @@
 const path = require('path');
+// Pour extraire les css vers un fichier .css
+// https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+// Pour minimizer les js
 const TerserPlugin = require('terser-webpack-plugin');
+
+// Pour minimizer un css
+// https://webpack.js.org/plugins/css-minimizer-webpack-plugin/
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 /* Pour générer une seule configuration */
 
 module.exports = {
@@ -16,14 +25,14 @@ module.exports = {
         aggregateTimeout: 4000,
     },
     // Pour extraire les css en fichier .css
-   // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
+    // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [new MiniCssExtractPlugin({
         filename: 'styles.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     })],
     // Utilisation de TersetPlugin() pour la minimification
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     },
     // Permet d'avoir un source map quality bundle (voir webpack config devtool)
     devtool: false,

@@ -1,5 +1,6 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// Pour extraire les css vers un fichier .css
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const dev = "dev";
 /* Pour générer une seule configuration */
@@ -18,9 +19,9 @@ module.exports = {
     },
     // Pour extraire les css en fichier .css
     // https://webpack.js.org/plugins/mini-css-extract-plugin#filename
-    plugins: [new MiniCssExtractPlugin({
-        filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
-    })],
+    // plugins: [new MiniCssExtractPlugin({
+    //     filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+    // })],
     // Permet d'avoir les fichiers originals avec source-map
     devtool: dev ? "eval-source-map" : false,
     module: {
