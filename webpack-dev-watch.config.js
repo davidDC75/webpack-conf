@@ -33,6 +33,11 @@ let config = {
                     },
                 ],
             },
+            // Pour les imports de css
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ],
     },
 };

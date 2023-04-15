@@ -11,7 +11,11 @@ import config from './config.json';
 // Importe un fichier de config javascript
 import compress from './config.js';
 
-// Importe le module dans node_modules/ jquery
+// Importe un fichier css
+// Dans le webpack.config.js on utilise le style-loader et le css-loader dans une rule
+import css from '../css/app.css';
+
+//   Importe le module dans node_modules/ jquery
 //import $ from 'jquery'; /* on commente pour le lazy-loading */
 
 /* Pour en importer plusieurs */
@@ -21,16 +25,20 @@ let a = "Ça fonctionne super bien";
 
 let [b,,c]= [1,2,4,5];
 
-log2(b);
+// Exécute la fonction log2
+//log2(b);
 
 // Affiche la configuration loader à partir d'un json
-console.log(config);
+//console.log(config);
 
 // Affiche compress loader à partir d'un fichier de config javascript
-console.log(compress);
+//console.log(compress);
 
 // En environnement de dev on peut mettre des break-points avec la commande : debugger
-debugger
+// Ne fonctionne qu'en mode env dev
+//debugger
+
+console.log(css);
 
 // On utilise jquery
 document.getElementById('button').addEventListener('click', function() {

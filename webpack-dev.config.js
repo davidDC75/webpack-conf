@@ -27,6 +27,11 @@ let config = {
                     },
                 ],
             },
+            // Pour les imports de css
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ],
     },
     /* Ce code pour importer un plug in pour le lazy loading ne fonctionne pas
