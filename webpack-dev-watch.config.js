@@ -9,6 +9,7 @@ let config = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'development.js',
     },
+    // Mode watch activé
     watch: true,
     watchOptions: {
         aggregateTimeout: 4000,

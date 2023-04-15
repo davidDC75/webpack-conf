@@ -9,10 +9,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'production.js',
     },
+    // Mode watch activé
     watch: true,
     watchOptions: {
         aggregateTimeout: 4000,
     },
+    // Utilisation de TersetPlugin() pour la minimification
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin()],

@@ -9,6 +9,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
         filename: 'production.js', // Le nom du fichier de sortie
     },
+    // Utilisation de TersetPlugin() pour la minimification
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin()],
