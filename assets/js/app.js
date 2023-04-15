@@ -15,7 +15,8 @@ import compress from './config.js';
 // Dans le webpack.config.js on utilise le style-loader et le css-loader dans une rule
 import * as css from '../css/app.css';
 
-//
+// Import un fichier scss
+// Dans le webpack.config.js on utilise le sass-loader
 import * as scss from '../css/h2.scss';
 
 
