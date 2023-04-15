@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 /* Pour générer une seule configuration */
 
 module.exports = {
@@ -7,6 +8,10 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
         filename: 'production.js', // Le nom du fichier de sortie
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
     },
     module: {
         rules: [

@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 /* Pour générer une seule configuration */
 
 module.exports = {
@@ -11,6 +12,10 @@ module.exports = {
     watch: true,
     watchOptions: {
         aggregateTimeout: 4000,
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
     },
     module: {
         rules: [
