@@ -2,18 +2,18 @@ const path = require('path');
 /* Pour générer une seule configuration */
 
 module.exports = {
-    mode: 'production',
-    entry: './assets/js/app.js',
+    mode: 'production', // Choisir le mode : development ou production
+    entry: './assets/js/app.js', // L'entry
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'production.js',
+        path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
+        filename: 'production.js', // Le nom du fichier de sortie
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: [
+                test: /\.js$/, // On ne traite que les js
+                exclude: /(node_modules|bower_components)/, // On exclu ces deux répertoires
+                use: [ // Ajout de babel-loader
                     'babel-loader',
                     {
                         loader: 'babel-loader',
