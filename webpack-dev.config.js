@@ -29,6 +29,12 @@ let config = {
             },
         ],
     },
+    /* Ce code pour importer un plug in pour le lazy loading ne fonctionne pas
+     mais on a déjà une méthode qui fonctionne dans app.js
+     à creuser */
+    // plugins: [
+    //     "@babel/plugin-syntax-dynamic-import"
+    // ],
 };
 
 module.exports = config;
