@@ -13,7 +13,9 @@ import compress from './config.js';
 
 // Importe un fichier css
 // Dans le webpack.config.js on utilise le style-loader et le css-loader dans une rule
-import css from '../css/app.css';
+import * as css from '../css/app.css';
+
+//import * as bootstrap from 'bootstrap';
 
 //   Importe le module dans node_modules/ jquery
 //import $ from 'jquery'; /* on commente pour le lazy-loading */
@@ -36,7 +38,7 @@ let [b,,c]= [1,2,4,5];
 
 // En environnement de dev on peut mettre des break-points avec la commande : debugger
 // Ne fonctionne qu'en mode env dev
-//debugger
+debugger
 
 console.log(css);
 

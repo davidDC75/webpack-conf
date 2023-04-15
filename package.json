@@ -8,6 +8,7 @@
     "acorn-import-assertions": "^1.8.0",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
+    "bootstrap": "^5.2.3",
     "browserslist": "^4.21.5",
     "buffer-from": "^1.1.2",
     "caniuse-lite": "^1.0.30001478",
@@ -92,6 +93,7 @@
     "wildcard": "^2.0.0"
   },
   "scripts": {
+    "all": "NODE_ENV=dev webpack --config webpack-dev.config.js; webpack --config webpack-prod.config.js",
     "dev": "NODE_ENV=dev webpack --config webpack-dev.config.js",
     "prod": "webpack --config webpack-prod.config.js",
     "watch-prod": "webpack --config webpack-prod-watch.config.js",
