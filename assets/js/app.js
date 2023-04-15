@@ -15,6 +15,10 @@ import compress from './config.js';
 // Dans le webpack.config.js on utilise le style-loader et le css-loader dans une rule
 import * as css from '../css/app.css';
 
+//
+import * as scss from '../css/h2.scss';
+
+
 //import * as bootstrap from 'bootstrap';
 
 //   Importe le module dans node_modules/ jquery
@@ -41,6 +45,7 @@ let [b,,c]= [1,2,4,5];
 debugger
 
 console.log(css);
+console.log(scss);
 
 // On utilise jquery
 document.getElementById('button').addEventListener('click', function() {
