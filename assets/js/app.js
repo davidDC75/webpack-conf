@@ -29,5 +29,8 @@ console.log(config);
 // Affiche compress loader à partir d'un fichier de config javascript
 console.log(compress);
 
+// En environnement de dev on peut mettre des break-points avec la commande : debugger
+// debugger
+
 // On utilise jquery
 $('body').css('backgroundColor','#9F9F9F');

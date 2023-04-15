@@ -19,6 +19,8 @@ module.exports = {
         minimize: true,
         minimizer: [new TerserPlugin()],
     },
+    // Permet d'avoir un source map quality bundle (voir webpack config devtool)
+    devtool: false,
     module: {
         rules: [
             {
