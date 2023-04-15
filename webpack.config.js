@@ -18,9 +18,9 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 // use: ['babel-loader']
-                use: [ // Ajout de babel-loader
-                    'babel-loader',
-                    {
+                use: { // Ajout de babel-loader
+                    //'babel-loader',
+                    //{
                         loader: 'babel-loader',
                         options: {
                             presets: [
@@ -33,12 +33,53 @@ module.exports = {
                                 }]
                             ]
                         },
-                    },
-                ],
+                    //},
+                },
             }
         ]
     }
 };
+
+/* Ancien babel loader */
+
+// module.exports = {
+//     mode: 'development', // Choisir le mode : development ou production
+//     entry: './assets/js/app.js', // L'entry
+//     output: {
+//         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
+//         filename: 'development.js', // Le nom du fichier de sortie
+//     },
+//     watch: true,
+//     watchOptions: {
+//         aggregateTimeout: 4000,
+//     },
+//     module: {
+//         rules: [
+//             {
+//                 test: /\.js$/,
+//                 exclude: /(node_modules|bower_components)/,
+//                 // use: ['babel-loader']
+//                 use: [ // Ajout de babel-loader
+//                     'babel-loader',
+//                     {
+//                         loader: 'babel-loader',
+//                         options: {
+//                             presets: [
+//                                 // ['@babel/preset-env', { targets: "> 0.25%, not dead" }]
+//                                 ['@babel/preset-env', {
+//                                     targets: {
+//                                         // On choisit la compatibilité avec certains navigateurs
+//                                         "browsers": ["last 2 versions","safari >=7", "ie >=7"]
+//                                     }
+//                                 }]
+//                             ]
+//                         },
+//                     },
+//                 ],
+//             }
+//         ]
+//     }
+// };
 
 /* Pour générer multiple configuration */
 
