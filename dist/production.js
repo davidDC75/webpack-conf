@@ -1,1 +1,1 @@
-(()=>{"use strict";var o;o="Je test l23",console.log(o),console.log(o)})();
+(()=>{"use strict";var o;o="ça fonctionne super bien !",console.log(o),console.log(o)})();

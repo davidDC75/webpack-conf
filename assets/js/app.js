@@ -8,4 +8,4 @@ import { log2 } from './log.js';
 //import {log,log2} from './log.js';
 
 //console.log(obj);
-log2('Je test l23');
+log2('ça fonctionne super bien !');

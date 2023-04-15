@@ -16,7 +16,7 @@
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _log_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./log.js */ \"./assets/js/log.js\");\n/* Pour importer toutes les fonctions */\n//import * as obj from './log.js';\n\n/* Pour importer une fonction */\n\n\n/* Pour en importer plusieurs */\n//import {log,log2} from './log.js';\n\n//console.log(obj);\n(0,_log_js__WEBPACK_IMPORTED_MODULE_0__.log2)('Je test l23');\n\n//# sourceURL=webpack://webpack1/./assets/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _log_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./log.js */ \"./assets/js/log.js\");\n/* Pour importer toutes les fonctions */\n//import * as obj from './log.js';\n\n/* Pour importer une fonction */\n\n\n/* Pour en importer plusieurs */\n//import {log,log2} from './log.js';\n\n//console.log(obj);\n(0,_log_js__WEBPACK_IMPORTED_MODULE_0__.log2)('ça fonctionne super bien !');\n\n//# sourceURL=webpack://webpack1/./assets/js/app.js?");
 
 /***/ }),
 
