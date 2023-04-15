@@ -36,12 +36,15 @@ let config = {
             // Pour compiler et injecter du css
             {
                 test: /\.css$/i,
-                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+                /* pour le dev, on utilise plutôt de 'style-loader' */
+                use: ['style-loader','css-loader','postcss-loader'],
+                //use: [ MiniCssExtractPlugin.loader, 'css-loader'],
             },
             // Pour compiler et injecter du sass
             {
                 test: /\.scss$/i,
-                use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
+                use: [ 'style-loader','css-loader', 'postcss-loader', 'sass-loader'],
+                //use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
             },
         ],
     },

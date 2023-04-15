@@ -47,7 +47,9 @@ module.exports = {
             // Pour compiler et injecter du css
             {
                 test: /\.css$/i,
-                use: [ MiniCssExtractPlugin.loader, 'css-loader'],
+                /* pour le dev, on utilise plutôt de 'style-loader' */
+                use: ['style-loader','css-loader','postcss-loader'],
+                //use: [ MiniCssExtractPlugin.loader, 'css-loader'],
 
                 /* Pour ajoute une source map mais c'est plutôt devtool qu'il faut utiliser par defaut */
                 /* https://github.com/webpack-contrib/css-loader#sourcemap */
@@ -64,7 +66,8 @@ module.exports = {
             // Pour compiler et injecter du sass
             {
                 test: /\.scss$/i,
-                use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
+                use: [ 'style-loader','css-loader', 'postcss-loader', 'sass-loader'],
+                //use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
             },
         ],
     },
