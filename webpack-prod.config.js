@@ -18,8 +18,8 @@ module.exports = {
     entry: './assets/js/app.js', // L'entry
     output: {
         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
-        // filename: '[fullhash]-production.js', // Le nom du fichier de sortie avec un hash
-        filename: 'production.js',
+        filename: '[name]-[fullhash]-production.js', // Le nom du fichier de sortie avec un hash
+        // filename: 'production.js',
     },
     // Utilisation de TersetPlugin() pour la minimification
     optimization: {
