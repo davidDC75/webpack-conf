@@ -13,6 +13,10 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 // https://www.npmjs.com/package/clean-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { webpack } = require('webpack');
+
+// https://www.npmjs.com/package/simple-progress-webpack-plugin
+const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
 /* Pour générer une seule configuration */
 
@@ -34,6 +38,7 @@ module.exports = {
     // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     // https://www.npmjs.com/package/webpack-manifest-plugin
     plugins: [
+        new SimpleProgressWebpackPlugin(),
         new MiniCssExtractPlugin({
             // filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
             filename: '[name].css',

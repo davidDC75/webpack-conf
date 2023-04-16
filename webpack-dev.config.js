@@ -10,6 +10,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // https://stackoverflow.com/questions/57810259/how-to-link-something-from-manifest-json
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
+// https://www.npmjs.com/package/simple-progress-webpack-plugin
+const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
 let config = {
     mode: 'development',
@@ -22,6 +24,7 @@ let config = {
     // Pour extraire les css en fichier .css
    // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [
+        new SimpleProgressWebpackPlugin(),
         // new MiniCssExtractPlugin(
         // {
         //     filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html

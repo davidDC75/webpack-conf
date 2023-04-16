@@ -118,6 +118,7 @@
     "postcss": "^8.4.21",
     "postcss-loader": "^7.2.4",
     "sass-loader": "^13.2.2",
+    "simple-progress-webpack-plugin": "^2.0.0",
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
     "webpack-manifest-plugin": "^5.0.0",
