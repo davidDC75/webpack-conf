@@ -1,1 +1,0 @@
-(()=>{"use strict";let[o,,l]=[1,2,4,5];var e;e=o,console.log(e),console.log(e)})();

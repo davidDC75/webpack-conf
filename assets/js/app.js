@@ -48,6 +48,8 @@ debugger
 console.log(css);
 console.log(scss);
 
+console.log(a);
+
 // On utilise jquery
 document.getElementById('button').addEventListener('click', function() {
     // lazy loading de jquery ici
