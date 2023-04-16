@@ -1,8 +1,8 @@
 # Ignore node modules
 node_modules/
 # Ignore image
-*.jpg
-*.jpeg
-*.gif
-*.png
+#*.jpg
+#*.jpeg
+#*.gif
+#*.png
 
