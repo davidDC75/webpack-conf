@@ -16,9 +16,9 @@ module.exports = {
     mode: 'production',
     entry: './assets/js/app.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        // filename: '[fullhash]-production.js', // Le nom du fichier de sortie avec un hash
-        filename: 'production.js',
+        path: path.resolve(__dirname, 'dist/prod'),
+        filename: '[name]-[chunkhash]-production.js', // Le nom du fichier de sortie avec un hash
+        // filename: 'production.js',
     },
     // Mode watch activé
     watch: true,
@@ -28,7 +28,8 @@ module.exports = {
     // Pour extraire les css en fichier .css
     // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [new MiniCssExtractPlugin({
-        filename: 'home.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        // filename: 'home.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     })],
     // Utilisation de TersetPlugin() pour la minimification
     optimization: {

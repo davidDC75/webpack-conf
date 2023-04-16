@@ -9,7 +9,7 @@ module.exports = {
     mode: 'development', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
     output: {
-        path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
+        path: path.resolve(__dirname, 'dist/dev'), // Le chemin absolue du répertoire de destination
         filename: 'development.js', // Le nom du fichier de sortie
     },
     // Pour activer le watch

@@ -18,7 +18,7 @@ module.exports = {
     entry: './assets/js/app.js', // L'entry
     output: {
         // https://webpack.js.org/configuration/output/
-        path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
+        path: path.resolve(__dirname, 'dist/prod'), // Le chemin absolue du répertoire de destination
         filename: '[name]-[chunkhash]-production.js', // Le nom du fichier de sortie avec un hash
         // filename: 'production.js',
     },
@@ -31,6 +31,7 @@ module.exports = {
     // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [new MiniCssExtractPlugin({
         filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        // filename: 'home.css',
     })],
     // Permet d'avoir un source map quality bundle (voir webpack config devtool)
     devtool: false,

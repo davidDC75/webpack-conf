@@ -7,7 +7,7 @@ let config = {
     mode: 'development',
     entry: './assets/js/app.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/dev'),
         filename: 'development.js',
     },
     // Mode watch activé
