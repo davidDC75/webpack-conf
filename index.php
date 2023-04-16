@@ -12,6 +12,7 @@
 <button class="btn btn-primary" id="button">Cliquez ici</button>
 <h2>Ce style est généré à partir de app.scss</h2>
 <a href="dev.php">DEV</a>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eJ9_qZUd99w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <script src="./dist/prod/main.js"></script>
 </body>
 </html>
