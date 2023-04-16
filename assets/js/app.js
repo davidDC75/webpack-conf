@@ -20,7 +20,7 @@ import * as css from '../css/app.css';
 import * as scss from '../css/app.scss';
 
 
-//import * as bootstrap from 'bootstrap';
+import * as bootstrap from 'bootstrap';
 
 //   Importe le module dans node_modules/ jquery
 //import $ from 'jquery'; /* on commente pour le lazy-loading */
