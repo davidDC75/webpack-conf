@@ -17,6 +17,7 @@ module.exports = {
     mode: 'production', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
     output: {
+        // https://webpack.js.org/configuration/output/
         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
         filename: '[name]-[fullhash]-production.js', // Le nom du fichier de sortie avec un hash
         // filename: 'production.js',
@@ -29,7 +30,7 @@ module.exports = {
     // Pour extraire les css en fichier .css
     // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [new MiniCssExtractPlugin({
-        filename: 'home.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        filename: 'home-[fullhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     })],
     // Permet d'avoir un source map quality bundle (voir webpack config devtool)
     devtool: false,
