@@ -56,7 +56,7 @@ document.getElementById('button').addEventListener('click', function() {
     // https://webpack.js.org/guides/lazy-loading/
     import(/* webpackChunkName: "jquery" */ 'jquery').then( module => {
         const $ = module.default;
-        $('body').css('backgroundColor','#9F9F9F');
+        $('h2').css('backgroundColor','#9F9F9F');
     });
 
 })

@@ -13,6 +13,11 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 // https://www.npmjs.com/package/simple-progress-webpack-plugin
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
+// https://www.npmjs.com/package/clean-webpack-plugin
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { webpack } = require('webpack');
+
+
 let config = {
     mode: 'development',
     entry: './assets/js/app.js',
@@ -37,6 +42,12 @@ let config = {
         new WebpackManifestPlugin({
             basePath: '',
             publicPath: '',
+        }),
+        /* Ne semble pas fonctionner mais ne donne pas d'erreur */
+        new CleanWebpackPlugin({
+            //root: path.resolve('./dist/prod'),
+            verbose: true,
+            dry: true,
         }),
     ],
     // Permet d'avoir les fichiers originals avec source-map

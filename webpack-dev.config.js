@@ -6,6 +6,10 @@ const dev = process.env.NODE_ENV === "dev";
 // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+// https://www.npmjs.com/package/clean-webpack-plugin
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { webpack } = require('webpack');
+
 // https://www.npmjs.com/package/webpack-manifest-plugin
 // https://stackoverflow.com/questions/57810259/how-to-link-something-from-manifest-json
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
@@ -32,6 +36,12 @@ let config = {
         new WebpackManifestPlugin({
             basePath: '',
             publicPath: '',
+        }),
+        /* Ne semble pas fonctionner mais ne donne pas d'erreur */
+        new CleanWebpackPlugin({
+            //root: path.resolve('./dist/prod'),
+            verbose: true,
+            dry: true,
         }),
     ],
     // Permet d'avoir les fichiers originals avec source-map

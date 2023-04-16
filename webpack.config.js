@@ -11,6 +11,10 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 // https://www.npmjs.com/package/simple-progress-webpack-plugin
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
+// https://www.npmjs.com/package/clean-webpack-plugin
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { webpack } = require('webpack');
+
 module.exports = {
     mode: 'development', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
@@ -35,6 +39,12 @@ module.exports = {
         new WebpackManifestPlugin({
             basePath: '',
             publicPath: '',
+        }),
+        /* Ne semble pas fonctionner mais ne donne pas d'erreur */
+        new CleanWebpackPlugin({
+            //root: path.resolve('./dist/prod'),
+            verbose: true,
+            dry: true,
         }),
     ],
     devtool: dev ? "eval-source-map" : false,
