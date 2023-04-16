@@ -8,6 +8,9 @@ const dev = "dev";
 // https://www.npmjs.com/package/webpack-manifest-plugin
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
+// https://www.npmjs.com/package/simple-progress-webpack-plugin
+const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
+
 module.exports = {
     mode: 'development', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
@@ -28,7 +31,11 @@ module.exports = {
     // })],
     // Permet d'avoir les fichiers originals avec source-map
     plugins: [
-        new WebpackManifestPlugin(),
+        new SimpleProgressWebpackPlugin(),
+        new WebpackManifestPlugin({
+            basePath: '',
+            publicPath: '',
+        }),
     ],
     devtool: dev ? "eval-source-map" : false,
     module: {
