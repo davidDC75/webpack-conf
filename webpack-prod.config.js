@@ -11,6 +11,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 // https://webpack.js.org/plugins/css-minimizer-webpack-plugin/
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
+// https://www.npmjs.com/package/clean-webpack-plugin
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 /* Pour générer une seule configuration */
 
 module.exports = {
@@ -35,6 +38,7 @@ module.exports = {
             // filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
             filename: '[name].css',
         }),
+        new CleanWebpackPlugin(),
     ],
     // Permet d'avoir un source map quality bundle (voir webpack config devtool)
     devtool: false,

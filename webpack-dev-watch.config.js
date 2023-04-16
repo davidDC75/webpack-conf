@@ -7,6 +7,7 @@ const dev = process.env.NODE_ENV === "dev";
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // https://www.npmjs.com/package/webpack-manifest-plugin
+// https://stackoverflow.com/questions/57810259/how-to-link-something-from-manifest-json
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 let config = {
@@ -29,7 +30,10 @@ let config = {
         // {
         //     filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
         // }),
-        new WebpackManifestPlugin()
+        new WebpackManifestPlugin({
+            basePath: '',
+            publicPath: '',
+        }),
     ],
     // Permet d'avoir les fichiers originals avec source-map
     devtool: dev ? "eval-source-map" : false,
