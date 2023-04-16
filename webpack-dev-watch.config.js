@@ -1,7 +1,13 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const dev = process.env.NODE_ENV === "dev";
+
+// Pour extraire les css vers un fichier .css
+// https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+// https://www.npmjs.com/package/webpack-manifest-plugin
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 let config = {
     mode: 'development',
@@ -17,9 +23,13 @@ let config = {
     },
     // Pour extraire les css en fichier .css
    // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
-    plugins: [new MiniCssExtractPlugin({
-        filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
-    })],
+    plugins: [
+        new MiniCssExtractPlugin(
+        {
+            filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        }),
+        new WebpackManifestPlugin()
+    ],
     // Permet d'avoir les fichiers originals avec source-map
     devtool: dev ? "eval-source-map" : false,
     module: {

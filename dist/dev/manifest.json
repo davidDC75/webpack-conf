@@ -1,0 +1,4 @@
+{
+  "main.js": "auto/development.js",
+  "jquery.js": "auto/jquery.development.js"
+}

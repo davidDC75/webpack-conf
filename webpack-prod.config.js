@@ -29,10 +29,13 @@ module.exports = {
     },
     // Pour extraire les css en fichier .css
     // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
-    plugins: [new MiniCssExtractPlugin({
-        filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
-        // filename: 'home.css',
-    })],
+    // https://www.npmjs.com/package/webpack-manifest-plugin
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+            // filename: 'home.css',
+        }),
+    ],
     // Permet d'avoir un source map quality bundle (voir webpack config devtool)
     devtool: false,
     module: {
