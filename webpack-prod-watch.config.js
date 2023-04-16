@@ -1,4 +1,6 @@
 const path = require('path');
+const { webpack } = require('webpack');
+
 // Pour extraire les css vers un fichier .css
 // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

@@ -1,4 +1,5 @@
 const path = require('path');
+const { webpack } = require('webpack');
 
 const dev = process.env.NODE_ENV === "dev";
 
@@ -8,7 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // https://www.npmjs.com/package/clean-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { webpack } = require('webpack');
+
 
 // https://www.npmjs.com/package/webpack-manifest-plugin
 // https://stackoverflow.com/questions/57810259/how-to-link-something-from-manifest-json

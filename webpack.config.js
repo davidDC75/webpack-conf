@@ -1,4 +1,6 @@
 const path = require('path');
+const { webpack } = require('webpack');
+
 // Pour extraire les css vers un fichier .css
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -13,7 +15,6 @@ const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
 // https://www.npmjs.com/package/clean-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { webpack } = require('webpack');
 
 module.exports = {
     mode: 'development', // Choisir le mode : development ou production

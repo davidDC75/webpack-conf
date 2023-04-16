@@ -1,4 +1,5 @@
 const path = require('path');
+const { webpack } = require('webpack');
 
 const dev = process.env.NODE_ENV === "dev";
 
@@ -15,8 +16,6 @@ const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
 // https://www.npmjs.com/package/clean-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { webpack } = require('webpack');
-
 
 let config = {
     mode: 'development',
