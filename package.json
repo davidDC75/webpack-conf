@@ -114,6 +114,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^5.0.0",
+    "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.7.5",
     "node-sass": "^8.0.0",
     "postcss": "^8.4.21",
@@ -123,6 +124,7 @@
     "simple-progress-webpack-plugin": "^2.0.0",
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
+    "url-loader": "^4.1.1",
     "webpack-manifest-plugin": "^5.0.0",
     "webpack-nano": "^1.1.1"
   }

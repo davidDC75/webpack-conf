@@ -76,13 +76,33 @@ module.exports = {
             // Pour compiler et injecter du css
             {
                 test: /\.css$/i,
+                // loader: "css-loader",
+                // options: {
+                //     url: true,
+                // },
                 use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             },
             // Pour compiler et injecter du sass
             {
                 test: /\.scss$/i,
-                use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'],
             },
+            // {
+            //     //test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf|wav)(\?.*)?$/,
+            //     test: /\.(png|jpg|gif)*/,
+            //     use: [
+            //       {
+            //         loader: 'url-loader',
+            //         options: {
+            //           limit: 8192,
+            //         },
+            //       },
+            //     ],
+            // },
         ],
     },
 };
