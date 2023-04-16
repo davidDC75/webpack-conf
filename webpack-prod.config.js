@@ -19,7 +19,7 @@ module.exports = {
     output: {
         // https://webpack.js.org/configuration/output/
         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
-        filename: '[name]-[fullhash]-production.js', // Le nom du fichier de sortie avec un hash
+        filename: '[name]-[chunkhash]-production.js', // Le nom du fichier de sortie avec un hash
         // filename: 'production.js',
     },
     // Utilisation de TersetPlugin() pour la minimification
@@ -30,7 +30,7 @@ module.exports = {
     // Pour extraire les css en fichier .css
     // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [new MiniCssExtractPlugin({
-        filename: 'home-[fullhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     })],
     // Permet d'avoir un source map quality bundle (voir webpack config devtool)
     devtool: false,
