@@ -19,7 +19,7 @@ module.exports = {
     output: {
         // https://webpack.js.org/configuration/output/
         path: path.resolve(__dirname, 'dist/prod'), // Le chemin absolue du répertoire de destination
-        filename: '[name]-[chunkhash]-production.js', // Le nom du fichier de sortie avec un hash
+        filename: '[name].js', // Le nom du fichier de sortie avec un hash
         // filename: 'production.js',
     },
     // Utilisation de TersetPlugin() pour la minimification
@@ -32,8 +32,8 @@ module.exports = {
     // https://www.npmjs.com/package/webpack-manifest-plugin
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
-            // filename: 'home.css',
+            // filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+            filename: '[name].css',
         }),
     ],
     // Permet d'avoir un source map quality bundle (voir webpack config devtool)

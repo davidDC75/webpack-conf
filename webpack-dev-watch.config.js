@@ -14,7 +14,8 @@ let config = {
     entry: './assets/js/app.js',
     output: {
         path: path.resolve(__dirname, 'dist/dev'),
-        filename: 'development.js',
+        filename: '[name]-[chunkhash].js',
+        // filename: 'development.js',
     },
     // Mode watch activé
     watch: true,
@@ -24,10 +25,10 @@ let config = {
     // Pour extraire les css en fichier .css
    // https://webpack.js.org/plugins/mini-css-extract-plugin#attributes
     plugins: [
-        new MiniCssExtractPlugin(
-        {
-            filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
-        }),
+        // new MiniCssExtractPlugin(
+        // {
+        //     filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+        // }),
         new WebpackManifestPlugin()
     ],
     // Permet d'avoir les fichiers originals avec source-map

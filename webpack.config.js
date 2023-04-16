@@ -5,12 +5,16 @@ const path = require('path');
 const dev = "dev";
 /* Pour générer une seule configuration */
 
+// https://www.npmjs.com/package/webpack-manifest-plugin
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+
 module.exports = {
     mode: 'development', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
     output: {
         path: path.resolve(__dirname, 'dist/dev'), // Le chemin absolue du répertoire de destination
-        filename: 'development.js', // Le nom du fichier de sortie
+        filename: '[name]-[chunkhash].js',
+        //filename: 'development.js', // Le nom du fichier de sortie
     },
     // Pour activer le watch
     watch: true,
@@ -23,6 +27,9 @@ module.exports = {
     //     filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
     // })],
     // Permet d'avoir les fichiers originals avec source-map
+    plugins: [
+        new WebpackManifestPlugin(),
+    ],
     devtool: dev ? "eval-source-map" : false,
     module: {
         rules: [
@@ -34,12 +41,13 @@ module.exports = {
                     options: {
                         presets: [
                             // ['@babel/preset-env', { targets: "> 0.25%, not dead" }]
-                            ['@babel/preset-env', {
-                                targets: {
-                                    // On choisit la compatibilité avec certains navigateurs
-                                    "browsers": ["last 2 versions","safari >=7", "ie >=7"]
-                                }
-                            }]
+                            ['@babel/preset-env', { targets: "defaults" }]
+                            // ['@babel/preset-env', {
+                            //     targets: {
+                            //         // On choisit la compatibilité avec certains navigateurs
+                            //         "browsers": ["last 2 versions","safari >=7", "ie >=7"]
+                            //     }
+                            // }]
                         ]
                     },
 

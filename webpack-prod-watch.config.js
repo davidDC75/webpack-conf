@@ -17,8 +17,8 @@ module.exports = {
     entry: './assets/js/app.js',
     output: {
         path: path.resolve(__dirname, 'dist/prod'),
-        filename: '[name]-[chunkhash]-production.js', // Le nom du fichier de sortie avec un hash
-        // filename: 'production.js',
+        //filename: '[name]-[chunkhash]-production.js', // Le nom du fichier de sortie avec un hash
+        filename: '[name].js',
     },
     // Mode watch activé
     watch: true,
@@ -30,8 +30,8 @@ module.exports = {
     // https://www.npmjs.com/package/webpack-manifest-plugin
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
-            // filename: 'home.css',
+            // filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
+            filename: '[name].css',
         }),
     ],
     // Utilisation de TersetPlugin() pour la minimification
