@@ -21,7 +21,7 @@ const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
 /* Pour générer une seule configuration */
 
-module.exports = {
+let config = {
     mode: 'production', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
     output: {
@@ -107,6 +107,7 @@ module.exports = {
     },
 };
 
+module.exports = config;
 /* Pour générer multiple configuration */
 
 // module.exports = [

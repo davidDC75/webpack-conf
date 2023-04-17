@@ -16,7 +16,7 @@ const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 // https://www.npmjs.com/package/clean-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
+let config = {
     mode: 'development', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
     output: {
@@ -100,6 +100,7 @@ module.exports = {
     },
 };
 
+module.exports = config;
 /* Ancien babel loader */
 
 // module.exports = {
