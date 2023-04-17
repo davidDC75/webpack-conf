@@ -21,7 +21,7 @@ let config = {
     entry: './assets/js/app.js', // L'entry
     output: {
         path: path.resolve(__dirname, 'dist/dev'), // Le chemin absolue du répertoire de destination
-        filename: '[name]-[chunkhash].js',
+        filename: '[name]-[chunkhash].js', // Un hash sera généré
         //filename: 'development.js', // Le nom du fichier de sortie
     },
     // Pour activer le watch
@@ -37,6 +37,8 @@ let config = {
     // Permet d'avoir les fichiers originals avec source-map
     plugins: [
         new SimpleProgressWebpackPlugin(),
+        /* Ajoute le fichier ./dist/dev/manifest.json
+            qui fait la relation avec les noms de fichier contenant des hash */
         new WebpackManifestPlugin({
             basePath: '',
             publicPath: '',
