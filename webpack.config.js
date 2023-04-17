@@ -80,7 +80,17 @@ let config = {
             {
                 test: /\.css$/i,
                 /* pour le dev, on utilise plutôt de 'style-loader' */
-                use: ['style-loader','css-loader','postcss-loader'],
+                use: [
+                    'style-loader',
+                    // 'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    'postcss-loader'
+                ],
                 //use: [ MiniCssExtractPlugin.loader, 'css-loader'],
 
                 /* Pour ajoute une source map mais c'est plutôt devtool qu'il faut utiliser par defaut */
@@ -98,7 +108,18 @@ let config = {
             // Pour compiler et injecter du sass
             {
                 test: /\.scss$/i,
-                use: [ 'style-loader','css-loader', 'postcss-loader', 'sass-loader'],
+                use: [
+                    'style-loader',
+                    //'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    'postcss-loader',
+                    'sass-loader'
+                ],
                 //use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
             },
         ],
