@@ -93,6 +93,7 @@
     "wildcard": "^2.0.0"
   },
   "scripts": {
+    "script-test": "webpack --config webpack-all.config.js",
     "all": "NODE_ENV=dev webpack --config webpack-dev.config.js; webpack --config webpack-prod.config.js",
     "dev": "NODE_ENV=dev webpack --config webpack-dev.config.js",
     "prod": "webpack --config webpack-prod.config.js",
