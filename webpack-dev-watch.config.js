@@ -62,7 +62,9 @@ let config = {
                         loader: 'babel-loader',
                         options: {
                             presets: [
-                                ['@babel/preset-env', { targets: "defaults" }]
+                                //['@babel/preset-env', { targets: "defaults" }]
+                                /* On ne spécifie pas de targets car on utilise .browserslistrc */
+                                ['@babel/preset-env', {}]
                             ]
                         },
                     },

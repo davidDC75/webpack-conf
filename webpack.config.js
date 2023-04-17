@@ -61,7 +61,9 @@ let config = {
                     options: {
                         presets: [
                             // ['@babel/preset-env', { targets: "> 0.25%, not dead" }]
-                            ['@babel/preset-env', { targets: "defaults" }]
+                            // ['@babel/preset-env', { targets: "defaults" }]
+                            /* On ne spécifie pas de targets car on utilise .browserslistrc */
+                            ['@babel/preset-env', {}]
                             // ['@babel/preset-env', {
                             //     targets: {
                             //         // On choisit la compatibilité avec certains navigateurs
