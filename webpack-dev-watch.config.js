@@ -64,6 +64,7 @@ let config = {
                             presets: [
                                 //['@babel/preset-env', { targets: "defaults" }]
                                 /* On ne spécifie pas de targets car on utilise .browserslistrc */
+                                /* https://www.npmjs.com/package/browserslist */
                                 ['@babel/preset-env', {}]
                             ]
                         },
