@@ -26,6 +26,16 @@ const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 // https://www.npmjs.com/package/clean-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+// Configuration du css-loader
+let dev_css_loader = {
+    loader: 'css-loader',
+    options: {
+        sourceMap: true,
+    },
+};
+
+let prod_css_loader = 'css-loader';
+
 let config = {
     mode: dev?'development':'production', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
@@ -48,7 +58,6 @@ let config = {
     // Permet d'avoir les fichiers originals avec source-map
     plugins: [
         new SimpleProgressWebpackPlugin(),
-        // Les autres plugins sont injectés dynamiquement à la fin
     ],
     devtool: dev ? "eval-source-map" : false,
     module: {
@@ -61,16 +70,7 @@ let config = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            // ['@babel/preset-env', { targets: "> 0.25%, not dead" }]
-                            // ['@babel/preset-env', { targets: "defaults" }]
-                            /* On ne spécifie pas de targets car on utilise .browserslistrc */
                             ['@babel/preset-env', {}]
-                            // ['@babel/preset-env', {
-                            //     targets: {
-                            //         // On choisit la compatibilité avec certains navigateurs
-                            //         "browsers": ["last 2 versions","safari >=7", "ie >=7"]
-                            //     }
-                            // }]
                         ]
                     },
 
@@ -82,7 +82,7 @@ let config = {
                 /* pour le dev, on utilise plutôt de 'style-loader' */
                 use: [
                     dev?'style-loader':MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    dev?dev_css_loader:prod_css_loader,
                     // {
                     //     loader: 'css-loader',
                     //     options: {
@@ -110,7 +110,7 @@ let config = {
                 test: /\.scss$/i,
                 use: [
                     dev?'style-loader':MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    dev?dev_css_loader:prod_css_loader,
                     // {
                     //     loader: 'css-loader',
                     //     options: {
