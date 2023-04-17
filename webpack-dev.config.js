@@ -53,7 +53,6 @@ let config = {
                 test: /\.js$/, // On ne traite que les js
                 exclude: /(node_modules|bower_components)/, // On exclu ces deux répertoires
                 use: [ // Ajout de babel-loader
-                    'babel-loader',
                     {
                         loader: 'babel-loader',
                         options: {

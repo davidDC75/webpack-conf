@@ -56,7 +56,8 @@ let config = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: { // Ajout de babel-loader
+                use: [
+                { // Ajout de babel-loader
                     loader: 'babel-loader',
                     options: {
                         presets: [
@@ -73,7 +74,7 @@ let config = {
                         ]
                     },
 
-                },
+                }],
             },
             // Pour compiler et injecter du css
             {
