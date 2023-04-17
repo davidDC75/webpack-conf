@@ -77,6 +77,24 @@ let module_rule = {
                 'sass-loader'
             ],
         },
+        // {
+        //     test: /\.(png|jpe?g|gif)$/i,
+        //     use: [
+        //         {
+        //             loader: 'file-loader',
+        //             options: {
+        //                 name: '[name].[ext]',
+        //                 outputPath: 'images',
+        //             },
+        //         },
+        //         {
+        //             loader: 'url-loader',
+        //             options: {
+        //                 limit: 8192,
+        //             },
+        //         },
+        //     ],
+        // },
     ],
 };
 
