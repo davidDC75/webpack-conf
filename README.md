@@ -16,4 +16,5 @@
 
 ### prod ou dev
 1. webpack-all.config.js => npm run script-test
-   Se comporte différement selon la variable d'environnement passée : NODE_ENV=dev
+
+Se comporte différement selon la variable d'environnement passée : NODE_ENV=dev
