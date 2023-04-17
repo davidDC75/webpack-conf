@@ -126,15 +126,20 @@ let config = {
     },
 };
 
+
+// Si prod
 if (!dev) {
+    // Alors extrait les .css et .sass dans un fichier .css
     config.plugins.push(new MiniCssExtractPlugin({
         filename: '[name].css',
     }));
+    // Clean le répertoire
     config.plugins.push(new CleanWebpackPlugin({
         verbose: true,
-        dry: true,
+        dry: false,
     }));
 
+    // Lance une optimisation des fichiers (minimification)
     optimization= {
         optimization:
         {
@@ -144,12 +149,15 @@ if (!dev) {
     }
     config=Object.assign(config,optimization);
 
+// Si dev
 } else {
+    // Crée le fichier manifest.json
     config.plugins.push(new WebpackManifestPlugin({
         basePath: '',
         publicPath: '',
     }));
 
+    // Active le watch
     watch = {
         watch: true,
         watchOptions: {
