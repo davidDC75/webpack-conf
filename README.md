@@ -12,3 +12,8 @@
 1. webpack.dev.config.js => npm run dev
 2. webpack.dev-watch.config.js => npm run watch-dev
 3. webpack.config.js => npx webpack
+
+
+### prod ou dev
+1. webpack-all.config.js => npm run script-test
+   Se comporte différement selon la variable d'environnement passée : NODE_ENV=dev
