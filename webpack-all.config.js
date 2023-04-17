@@ -36,6 +36,50 @@ let dev_css_loader = {
 
 let prod_css_loader = 'css-loader';
 
+let module_rule = {
+    rules: [
+        {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [
+            { // Ajout de babel-loader
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        // utilise le fichier .browserslistrc
+                        ['@babel/preset-env', {}]
+                    ]
+                },
+
+            }],
+        },
+        // Pour compiler et injecter du css
+        {
+            test: /\.css$/i,
+            /* pour le dev, on utilise plutôt de 'style-loader' */
+            /* pour la prod, on crée des css */
+            use: [
+                dev?'style-loader':MiniCssExtractPlugin.loader,
+                dev?dev_css_loader:prod_css_loader,
+                'postcss-loader'
+            ],
+
+        },
+        // Pour compiler et injecter du sass
+        {
+            test: /\.scss$/i,
+            use: [
+                /* pour le dev, on utilise plutôt de 'style-loader' */
+                /* pour la prod, on crée des css */
+                dev?'style-loader':MiniCssExtractPlugin.loader,
+                dev?dev_css_loader:prod_css_loader,
+                'postcss-loader',
+                'sass-loader'
+            ],
+        },
+    ],
+};
+
 let config = {
     mode: dev?'development':'production', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
@@ -53,49 +97,7 @@ let config = {
     // devtool uniquement en dev
     devtool: dev ? "eval-source-map" : false,
 
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: [
-                { // Ajout de babel-loader
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            // utilise le fichier .browserslistrc
-                            ['@babel/preset-env', {}]
-                        ]
-                    },
-
-                }],
-            },
-            // Pour compiler et injecter du css
-            {
-                test: /\.css$/i,
-                /* pour le dev, on utilise plutôt de 'style-loader' */
-                /* pour la prod, on crée des css */
-                use: [
-                    dev?'style-loader':MiniCssExtractPlugin.loader,
-                    dev?dev_css_loader:prod_css_loader,
-                    'postcss-loader'
-                ],
-
-            },
-            // Pour compiler et injecter du sass
-            {
-                test: /\.scss$/i,
-                use: [
-                    /* pour le dev, on utilise plutôt de 'style-loader' */
-                    /* pour la prod, on crée des css */
-                    dev?'style-loader':MiniCssExtractPlugin.loader,
-                    dev?dev_css_loader:prod_css_loader,
-                    'postcss-loader',
-                    'sass-loader'
-                ],
-            },
-        ],
-    },
+    module: module_rule,
 };
 
 
