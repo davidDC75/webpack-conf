@@ -93,6 +93,12 @@ let module_rule = {
         //                 limit: 8192,
         //             },
         //         },
+        //         {
+        //             loader: 'img-loader',
+        //             options: {
+        //                 enables: !dev,
+        //             },
+        //         },
         //     ],
         // },
     ],
