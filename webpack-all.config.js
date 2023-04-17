@@ -40,26 +40,19 @@ let config = {
     mode: dev?'development':'production', // Choisir le mode : development ou production
     entry: './assets/js/app.js', // L'entry
     output: {
-        path: path.resolve(__dirname, dev?'dist/dev':'dist/prod'), // Le chemin absolue du répertoire de destination
+        path: path.resolve(__dirname, dev?'dist/dev':'dist/prod'),
+        // Hash en dev et main en prod
         filename: dev?'[name]-[chunkhash].js':'[name].js',
-        //filename: 'development.js', // Le nom du fichier de sortie
     },
-    // Pour activer le watch
-    // watch: true,
-    // watchOptions: {
-    //     aggregateTimeout: 4000,
-    // },
 
-    // Pour extraire les css en fichier .css
-    // https://webpack.js.org/plugins/mini-css-extract-plugin#filename
-    // plugins: [new MiniCssExtractPlugin({
-    //     filename: 'styles_dev.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
-    // })],
-    // Permet d'avoir les fichiers originals avec source-map
     plugins: [
+        // plugins commun au deux modes
         new SimpleProgressWebpackPlugin(),
     ],
+
+    // devtool uniquement en dev
     devtool: dev ? "eval-source-map" : false,
+
     module: {
         rules: [
             {
@@ -70,6 +63,7 @@ let config = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
+                            // utilise le fichier .browserslistrc
                             ['@babel/preset-env', {}]
                         ]
                     },
@@ -80,47 +74,25 @@ let config = {
             {
                 test: /\.css$/i,
                 /* pour le dev, on utilise plutôt de 'style-loader' */
+                /* pour la prod, on crée des css */
                 use: [
                     dev?'style-loader':MiniCssExtractPlugin.loader,
                     dev?dev_css_loader:prod_css_loader,
-                    // {
-                    //     loader: 'css-loader',
-                    //     options: {
-                    //         sourceMap: true,
-                    //     },
-                    // },
                     'postcss-loader'
                 ],
-                //use: [ MiniCssExtractPlugin.loader, 'css-loader'],
 
-                /* Pour ajoute une source map mais c'est plutôt devtool qu'il faut utiliser par defaut */
-                /* https://github.com/webpack-contrib/css-loader#sourcemap */
-                // use: [
-                //     MiniCssExtractPlugin.loader,
-                //     {
-                //       loader: "css-loader",
-                //       options: {
-                //         sourceMap: true,
-                //       },
-                //     },
-                // ],
             },
             // Pour compiler et injecter du sass
             {
                 test: /\.scss$/i,
                 use: [
+                    /* pour le dev, on utilise plutôt de 'style-loader' */
+                    /* pour la prod, on crée des css */
                     dev?'style-loader':MiniCssExtractPlugin.loader,
                     dev?dev_css_loader:prod_css_loader,
-                    // {
-                    //     loader: 'css-loader',
-                    //     options: {
-                    //         sourceMap: true
-                    //     }
-                    // },
                     'postcss-loader',
                     'sass-loader'
                 ],
-                //use: [ MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader', 'sass-loader'],
             },
         ],
     },
@@ -169,76 +141,3 @@ if (!dev) {
 }
 
 module.exports = config;
-/* Ancien babel loader */
-
-// module.exports = {
-//     mode: 'development', // Choisir le mode : development ou production
-//     entry: './assets/js/app.js', // L'entry
-//     output: {
-//         path: path.resolve(__dirname, 'dist'), // Le chemin absolue du répertoire de destination
-//         filename: 'development.js', // Le nom du fichier de sortie
-//     },
-//     watch: true,
-//     watchOptions: {
-//         aggregateTimeout: 4000,
-//     },
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.js$/,
-//                 exclude: /(node_modules|bower_components)/,
-//                 // use: ['babel-loader']
-//                 use: [ // Ajout de babel-loader
-//                     'babel-loader',
-//                     {
-//                         loader: 'babel-loader',
-//                         options: {
-//                             presets: [
-//                                 // ['@babel/preset-env', { targets: "> 0.25%, not dead" }]
-//                                 ['@babel/preset-env', {
-//                                     targets: {
-//                                         // On choisit la compatibilité avec certains navigateurs
-//                                         "browsers": ["last 2 versions","safari >=7", "ie >=7"]
-//                                     }
-//                                 }]
-//                             ]
-//                         },
-//                     },
-//                 ],
-//             }
-//         ]
-//     }
-// };
-
-/* Pour générer multiple configuration */
-
-// module.exports = [
-//     {
-//         output: {
-//             path: path.resolve(__dirname, 'dist'),
-//             filename: 'production.js',
-//             // libraryTarget: 'amd',
-//         },
-//         // name: 'amd',
-//         entry: './assets/js/app.js',
-//         watch: true,
-//         watchOptions: {
-//             aggregateTimeout: 4000,
-//         },
-//         mode: 'production',
-//     },
-//     {
-//         output: {
-//             path: path.resolve(__dirname, 'dist'),
-//             filename: 'development.js',
-//             // libraryTarget: 'commonjs',
-//         },
-//         // name: 'commonjs',
-//         entry: './assets/js/app.js',
-//         watch: true,
-//         watchOptions: {
-//             aggregateTimeout: 4000,
-//         },
-//         mode: 'development',
-//     },
-// ]
