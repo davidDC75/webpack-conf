@@ -15,6 +15,8 @@
 
 
 ### prod ou dev
-1. webpack-all.config.js => npm run script-test
+1. webpack-all.config.js
+    1. npm run script-prod => Pour la production
+    2. npm run script-dev => Pour le développement
 
 Se comporte différement selon la variable d'environnement passée : NODE_ENV=dev
