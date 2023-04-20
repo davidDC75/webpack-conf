@@ -116,6 +116,10 @@ let config = {
     plugins: [
         // plugins commun au deux modes
         new SimpleProgressWebpackPlugin(),
+        new CleanWebpackPlugin({
+            dry: false,
+            verbose: true,
+        }),
     ],
 
     // devtool uniquement en dev
@@ -130,11 +134,6 @@ if (!dev) {
     // Alors extrait les .css et .sass dans un fichier .css
     config.plugins.push(new MiniCssExtractPlugin({
         filename: '[name].css',
-    }));
-    // Clean le répertoire
-    config.plugins.push(new CleanWebpackPlugin({
-        verbose: true,
-        dry: false,
     }));
 
     // Lance une optimisation des fichiers (minimification)

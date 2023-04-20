@@ -43,11 +43,9 @@ let config = {
             // filename: 'home-[chunkhash]-production.css', // Crée le fichier dans ./dist/styles.css à ajouter à son html
             filename: '[name].css',
         }),
-        /* Ne semble pas fonctionner mais ne donne pas d'erreur */
         new CleanWebpackPlugin({
-            //root: path.resolve('./dist/prod'),
+            dry: false,
             verbose: true,
-            dry: true,
         }),
     ],
     // Utilisation de TersetPlugin() pour la minimification
