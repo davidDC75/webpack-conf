@@ -43,11 +43,9 @@ let config = {
             basePath: '',
             publicPath: '',
         }),
-        /* Ne semble pas fonctionner mais ne donne pas d'erreur */
         new CleanWebpackPlugin({
-            //root: path.resolve('./dist/prod'),
+            dry: false,
             verbose: true,
-            dry: true,
         }),
     ],
     devtool: dev ? "eval-source-map" : false,
